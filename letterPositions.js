@@ -20,18 +20,27 @@ const assertEqual = function(array1, array2) {
 //ACTUAL FUNCTION
 
 const letterPositions = (sentence) => {
-  let result = {};
-  sentence = sentence.replace(/\s/g, '');
+  const result = {};
+
+  const sentenceCopy = sentence.replace(/\s/g, '');
   //console.log(sentence);
-  for (let i = 0; i < sentence.length; i++) {
-    //console.log(letter);
-    if(sentence[i]) {
-      let letterArray = [sentence.indexOf(sentence[i])]
-      result[sentence[i]] = letterArray;
+  for (let i = 0; i < sentenceCopy.length; i++) {
+    //console.log(sentence[i]);
+    if (result[sentenceCopy[i]]) {
+      result[sentenceCopy[i]].push(i);
+    } else {
+      const letterArray = [];
+      letterArray.push(i);
+      result[sentenceCopy[i]] = letterArray;
     }
-    
   }
   return result;
 };
 
-console.log(letterPositions('hello'))
+//TEST CODE
+
+console.log(letterPositions('hello'));
+console.log(letterPositions("lighthouse in the house"));
+assertArraysEqual(letterPositions('he llo'), { h: [ 0 ], e: [ 1 ], l: [ 2, 3 ], o: [ 4 ]});
+
+//assertArraysEqual(letterPositions('hello', { h: [ 0 ], e: [ 1 ], l: [ 3 ], o: [ 4 ]}))
