@@ -1,6 +1,6 @@
 //Test/Assertion Functions
-const assertEqual = require(`./assertArrayEqual`);
-const assertArraysEqual = require(`./assertArrayEqual`);
+const assertArraysEqual = require('./assertArraysEqual');
+
 //ACTUAL FUNCTION
 
 const middle = (num) => {
@@ -15,20 +15,8 @@ const middle = (num) => {
       numArray[0] = num[Math.floor(num.length / 2)];
     }
   }
-  console.log(numArray);
+  //console.log(numArray);
   return numArray;
 };
 
-//TEST CODE
-middle([1, 2, 3, 4]); // => [2, 3]
-middle([1, 2, 3, 4, 5, 6]);
-
-middle([1, 2, 3]); // => [2]
-middle([1, 2, 3, 4, 5]);
-
-middle([1]); // => []
-middle([1, 2]);
-
-assertArraysEqual(middle([1, 2, 3, 4]), [2, 3]);
-assertArraysEqual(middle([1, 2, 3]), [2]);
-assertArraysEqual(middle([1]), []);
+module.exports = middle;
