@@ -19,4 +19,6 @@ const middle = (num) => {
   return numArray;
 };
 
+
+
 module.exports = middle;

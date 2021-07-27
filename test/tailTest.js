@@ -1,10 +1,23 @@
+//Imported Functions
 const tail = require('../tail');
-const assertEqual = require('../assertEqual')
+const expect = require('chai').expect;
 
-//Test Code
+//Test Cases
 const result = tail(["Hello", "Lighthouse", "Labs"]);
-assertEqual(result.length, 2);
-assertEqual(result[0], "Lighthouse");
-assertEqual(result[0], "Labs");
-assertEqual(result[1], "Labs");
-assertEqual(result[1], "Lighthouse");
+describe("#tail", () => {
+  it("The length of the tail of ['Hello', 'Lighthouse', 'Labs'] should be 2", () => {
+    expect(result.length).to.equal(2)
+  });
+  
+  it("The tail of ['Hello', 'Lighthouse', 'Labs'] should be ['Lighthouse', 'Labs']", () => {
+    expect(result).to.eql(['Lighthouse', 'Labs'])
+  });
+
+  it("The first item of the tail of ['Hello', 'Lighthouse', 'Labs'] should be ['Lighthouse']", () => {
+    expect(result[0]).to.equal('Lighthouse')
+  });
+
+  it("The second item of the tail of ['Hello', 'Lighthouse', 'Labs'] should be ['Labs']", () => {
+    expect(result[1]).to.equal('Labs')
+  }); 
+});
