@@ -1,6 +1,5 @@
 //TEST FUNCTION
-const assertEqual = require(`./assertArrayEqual`);
-const assertArraysEqual = require(`./assertArrayEqual`);
+const assertArraysEqual = require(`./assertArraysEqual`);
 
 //ACTUAL FUNCTION
 
@@ -13,6 +12,8 @@ const map = function(array, callback) {
   }
   return results;
 };
+
+module.exports = map;
 
 //TEST CODE
 

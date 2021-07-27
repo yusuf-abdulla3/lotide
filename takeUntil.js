@@ -1,7 +1,6 @@
 //TEST FUNCTION
 
-const assertEqual = require(`./assertArrayEqual`);
-const assertArraysEqual = require(`./assertArrayEqual`);
+const assertArraysEqual = require(`./assertArraysEqual`);
 
 //ACTUAL FUNCTION
 const takeUntil = (arr, callback) => {
@@ -15,6 +14,8 @@ const takeUntil = (arr, callback) => {
   }
   return results;
 };
+
+module.exports = takeUntil;
 
 //TEST CODE
 const data1 = [1, 2, 5, 7, 2, -1, 2, 4, 5];

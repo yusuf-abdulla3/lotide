@@ -1,6 +1,6 @@
 //IMPORTED TEST FUNCTIONS
-const assertEqual = require(`./assertArrayEqual`);
-const assertArraysEqual = require(`./assertArrayEqual`);
+
+const assertArraysEqual = require(`./assertArraysEqual`);
 
 
 //ACTUAL FUNCTION
@@ -9,6 +9,8 @@ const without = function(source, itemsToRemove) {
   const myArray = source.filter((el) => !itemsToRemove.includes(el));
   console.log("New Without Array: ", myArray);
 };
+
+module.exports = without;
 
 
 //Test Cases For Without Function

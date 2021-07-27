@@ -7,6 +7,8 @@ const findKey = (obj, callback) => {
   return keyArray.find(el => callback(obj[el]));
 };
 
+module.exports = findKey;
+
 //TEST CODE
 console.log(findKey({
   "Blue Hill": { stars: 1 },
